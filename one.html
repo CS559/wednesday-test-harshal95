@@ -24,7 +24,7 @@
 <p>You should have already looked at the <a href="index.html">index</a> page.</p>
 <p>You should read this page in the web browser to see how it looks. You should also read the "source" (html file and css files) for this page to see how they work.</p>
 <p>Part of the idea of this page is to get you used to looking inside of HTML files when you read (and work on) workbooks. So, even if you know HTML well, please have a look at this file.</p>
-<p>Note that for this workbook page, you don't have to do anything other than read. We encourage you to make changes (so you can see the effects), but we are simply going to assume that you've done the "work".</p>
+<p>Note that for this workbook page, you don't have to do anything other than read. We encourage you to make changes (so you can see the effects), but we are simply going to assume that you've done the "work". Throughout the page, there are suggestions for things to try to make sure that you understand how things work.</p>
 <p>For CS559, we will assume that you know the basics of how to make web pages so that you can make pages to put your graphics programs on. We will only need some basic HTML and CSS stuff. </p>
 <p>If you aren't already familiar with HTML, please find a resource on the web and learn about the basics. Here are some suggestions:</p>
 <ul>
@@ -150,6 +150,162 @@ Look at the HTML file and make sure you can find it! Each element can only have 
 
 <div id="one03" class="examplebox">
     <h2>Box 3: Color</h2>
+    <p>
+        As you might guess, color is kindof important for doing computer graphics.
+        We used to spend at least a week discussing it - I'm not sure how much
+        we'll do this semester.
+    </p>
+    <p>
+        You should read the 
+        <a href="http://graphics.cs.wisc.edu/WP/tutorials/color-initial-answers-to-a-practical-question/">CS559 Color Tutorial]</a>.
+    </p>
+    <p>
+        For now, we should focus on what we'll use for HTML.
+        When you read the HTML for this page, you'll see that many of the colors are specified
+        by name (e.g. "red", "blue", "darkred", "blueviolet").
+        This is convenient in a web page, but isn't always available when programming.
+    </p>
+    <p>
+        You should get used to specifying colors as hex strings like <code>#FF8AC5</code>. 
+        This works for HTML, and for a lot of the other web programming we will do. 
+        See the 
+        <a href="http://graphics.cs.wisc.edu/WP/tutorials/color-initial-answers-to-a-practical-question/">CS559 Color Tutorial]</a>
+        for a discussion. 
+        But basically read <code>#FF88CC</code> as 3 hexidecimal numbers (FF,8A,C5) that 
+        are the amount of red, green and blue. Each number is a binary fraction, so that FF means 
+        FF/FF (or 255/255) or 100% (of read in this case). 
+    </p>
+    <p>
+        Here are some boxes for you to color:
+        <div style="height:20px; width:80px; float:left; margin:5px; background-color: blue"> </div>
+        <div style="height:20px; width:80px; float:left; margin:5px; background-color: #FF88CC"> </div>
+        <div style="height:20px; width:80px; float:left; margin:5px; background-color: #F8C"> </div>
+        <div style="height:20px; width:80px; float:left; margin:5px; background-color: #005080"> </div>
+        Although, this is a very verbose way to make boxes. 
+        Try experimenting with changing their colors.
+    </p>
+</div>
+
+<div id="one04" class="examplebox">
+    <h2>Box 4: Layout</h2>
+    <p>
+        If you noticed in the previous box, I put a set of 4 boxes (div tags) next to each other. 
+        Being able to arrange elements is important.
+        HTML gives some very flexible ways to do it.
+        But this flexibility can make it complicated. 
+        In general, HTML specifies the basic idea of how the different elements should be arranged,
+        and the browser lays out the elements to best fit them on the screen according to
+        some complicated rules.
+    </p>
+    <div class="simplebox" style="width:200px">
+        <div class="simplebox" style="width:80%">
+                <div class="simplebox" style="width:40%">one</div>
+                <div class="simplebox" style="width:40%">two</div>
+        </div>
+        <div class="simplebox" style="width:80%">
+        </div>
+        <div class="simplebox" style="width:80%"></div>
+    </div>
+    <p>
+        You won't need to do too much of this for class, but get used to seeing 
+        HTML that does things to create desired layouts.
+    </p>
+</div>
+
+<div id="one05" class="examplebox">
+    <h2>Box 5: Button Elements</h2>
+    <p>
+        HTML has input elements, like buttons and sliders and type-in boxes. 
+        They can be used with straight HTML for making forms. 
+        We will use them with JavaScript programs.
+    </p>
+    <p>
+        Input elements are just like any other elements - they are tags.
+        Here, I've made a button, right in the middle of my paragraph.
+        <button type="button">Button</button>
+        It probably looks silly in the middle of a paragraph.
+    </p>
+    <p>
+        There are multiple ways to make buttons, but using the <code>&lt;button&gt;</code>
+        tag is preferred. 
+        See the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/button">button documentation</a>.
+    </p>
+    <p> 
+        Just like anything else in HTML, you can style buttons to make them
+        look any way you like. If you don't do anything, they may be ugly.
+        <button>Plain</button>
+        <button style="background-color: red; border: none; color:white">Red</button>
+        <button style="background-color:lightblue; border: 2px solid blue; color:blue; border-radius: 5px">Blue</button>
+        Of course, if you do something, it might still be ugly. 
+        There are lots of style sheets around the web that make nice looking buttons.
+        See <a href="https://www.w3schools.com/css/css3_buttons.asp"> this page for ideas.</a>
+    </p>
+    <p>
+        Like other HTML elements, buttons can have classes and IDs. The latter will be
+        really important for finding particular buttons when we start programming. 
+        Here are a few buttons with their appearance styled with CSS that is 
+        in the "one.css" file:
+    </p>
+    <div>
+        <button class="onebutton" id="button11">One</button>
+        <button class="onebutton" id="button12">Two</button>
+        <button class="onebutton" id="button13">Three</button>
+    </div>
+    <p>
+        Look at the CSS and HTML for those buttons and understand why they look
+        and behave the ways that they do. Experiment with changing the CSS to make
+        them look different.
+    </p>
+    <p>
+        By themselves, buttons don't do much. We need to connect them to JavaScript
+        programs to make them more exciting.
+    </p>
+</div>
+
+<div id="one06" class="examplebox">
+    <h2>Box 6: Slider Elements</h2>
+    <p>
+        One last HTML element before we move on to programming: sliders. 
+        Sliders are mainly useful when we have programs to read them.
+    </p>
+    <p>
+        Just like buttons, sliders are elements that could be put anywhere
+        <input type="range"> 
+        like right in this paragraph. Note that a slider is called a "range"
+        input (since it's useful for making a number range).
+    </p>
+    <p>
+        In practice, we'll try to put sliders in more useful places.
+    </p>
+    <p>
+        Just like buttons (and most HTML elements), sliders can be styled. 
+        They can also have their minimum, maximum, and step sizes set. 
+        Here are a few sliders to try.
+    </p>
+    <div>
+        <!-- the "block" display type causes the sliders to stack -->
+        <input type="range" style="display: block">
+        <input type="range" style="display: block" step="10" min="0" max="100">
+        <input type="range" style="display: block; background: #DDD">
+        <input type="range" style="display: block; background: #DDD" step="5" min="0" max="20">
+    </div>
+    <p>
+        We'll make use of sliders soon enough..
+    </p>
+</div>
+
+<div class="examplebox">
+    <h2>Summary</h2>
+    <p>
+        Hopefully, the experience of trying to read (and maybe modify) this
+        web page will give you a sense of what it's like to work with a workbook
+        and to read HTML (so you can put some things around your programs as you
+        start to write them).
+    </p>
+    <p>
+        Now you're ready to go on to <a href="two.html">two.html</a> where we'll
+        start to do some JavaScript programming.
+    </p>
 </div>
 </body>
 

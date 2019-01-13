@@ -6,7 +6,7 @@ You should read this page in the web browser to see how it looks. You should als
 
 Part of the idea of this page is to get you used to looking inside of HTML files when you read (and work on) workbooks. So, even if you know HTML well, please have a look at this file.
 
-Note that for this workbook page, you don't have to do anything other than read. We encourage you to make changes (so you can see the effects), but we are simply going to assume that you've done the "work".
+Note that for this workbook page, you don't have to do anything other than read. We encourage you to make changes (so you can see the effects), but we are simply going to assume that you've done the "work". Throughout the page, there are suggestions for things to try to make sure that you understand how things work.
 
 For CS559, we will assume that you know the basics of how to make web pages so that you can make pages to put your graphics programs on. We will only need some basic HTML and CSS stuff. 
 
