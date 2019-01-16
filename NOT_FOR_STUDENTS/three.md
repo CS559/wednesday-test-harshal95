@@ -4,9 +4,15 @@ and saw how it can be attached to a web page.
 On this page, we'll continue. We'll use JavaScript to change
 page content, and make buttons and sliders do things.
 
-The goal here is to show how to use JavaScript with web pages
-before we get to doing graphics stuff. Some of the things we're
-doing on this page are simple and/or silly, but the idea is
+The real goal is to learn the ideas of event-driven and
+animation-loop-driven programming. 
+Soon, we'll use these two programming styles to write graphics
+programs. But for now, we'll just use them to do silly things
+with the contents of a simple web page.
+
+In the process, we'll get to see buttons, sliders, and animation.
+
+The things we're doing on this page are simple and/or silly, but the idea is
 to practice on easy things before getting to doing graphics
 (next week!). 
 
