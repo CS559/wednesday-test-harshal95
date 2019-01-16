@@ -14,6 +14,12 @@ The fact that you are looking at this, means you probably have done the first of
 For more information on workbooks, see $WP.workbooks.  
 For more information on using a local server, see $WP.tools#Local_Web_Server
 
+Note: this workbook is a little wordier and more "make sure you know how to do things"
+then future ones are likely to be. 
+
+In the future, we'll be doing graphics programming.
+This workbook is about making sure you are ready!
+
 ## Local Server Check
 
 You should always "run" the web pages served by a local server. 

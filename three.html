@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<!--
+    Workbook 1 for CS559 - Page 3 (three.html) -
+    written January 2019, by Michael Gleicher
+
+    students are allowed (and) encouraged to read the HTML source files!
+-->
+
+<header>
+    <meta charset="UTF-8"> 
+    <!-- use the CS559 Style Sheet -->
+    <link rel="stylesheet" href="Libs/style559.css">
+    <title>
+        Assignment 01-03: Getting Started - Changing the Page (Page Three)
+    </title>
+</header>
+
+<body>
+    <!-- the next line is a comment that directs how the 559 file management software works -->
+    <!-- @@MDReplace: NOT_FOR_STUDENTS/three.md -->
+    <!-- @@EndMDReplace -->
+
+    <div id="box1" class="examplebox">
+        <h2>Changing the page</h2>
+        <p>
+            JavaScript has complete access to the web page. It can read and write to it.
+            To make this easier, we need to name parts so we can find them.
+            So, I can <span id="box1-span">put text into the HTML that you won't see!</span>
+        </p>
+        <p>
+            If you look at the HTML, you'll see what is in the HTML is not what you
+            see on the screen, because the JavaScript code finds the text and changes it.
+            The initial text (in the HTML file) appeared, but it was changed so fast
+            that you never got to see it. (it might have been changed so fast that It
+            never actually showed on the screen). This might be a good excuse to practice with
+            the debugger again: stop the program before the statement that changes the text,
+            and you'll see what the page was like before - then step and see how it gets
+            changed.
+        </p>
+    </div>
+    <!-- now run the JavaScript - be sure to load as a module so it works as ES6 -->
+    <script src="three.js" type="module"></script>
+</body>
+</html>
