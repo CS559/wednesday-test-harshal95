@@ -22,13 +22,31 @@ body {
     width: 500px;
 }
 
+/** basic button style so things aren't too ugly */
+/* for playing with the buttons */
+.basicbutton {
+    width:100px;
+    height:30px;
+    border-radius: 5px;
+    border: 2px solid black;
+    margin: 8px;
+    background-color: lightgrey;
+}
+.basicbutton:hover {
+    border: 4px solid black;
+}
+.basicbutton:active {
+    color: white;
+    background-color: darkgray;
+}
+
+
 /*** Simple SVG styles for testing ***/
 .lightbluewithborder {
     fill: #CCF;
     stroke: #00F;
     stroke-width: 4px;
 }
-
 .lightredwithborder {
     fill: #FCC;
     stroke: #F00;

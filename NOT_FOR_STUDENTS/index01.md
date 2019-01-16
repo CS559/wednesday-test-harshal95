@@ -19,6 +19,7 @@ then future ones are likely to be.
 
 In the future, we'll be doing graphics programming.
 This workbook is about making sure you are ready!
+Future workbooks will have you do more programming, and less plain reading.
 
 ## Local Server Check
 
@@ -62,6 +63,8 @@ Other readings are sprinkled across the pages of this workbook. Some things that
 - Some resources on HTML and CSS (if you aren't already familiar). You just need to know the basics. The [Mozilla Learning HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML) site is a good resource.
 - The tutorial on [Color](http://graphics.cs.wisc.edu/WP/tutorials/color-initial-answers-to-a-practical-question/) - is from the 2015 version of 559, but it's still really useful.
 - If you are learning JavaScript, look at the resources on the $WP.javascript page.
+
+For this week, there are no regular readings (book chapters). Those will start in the next week or two.
 
 ## Assessment
 
