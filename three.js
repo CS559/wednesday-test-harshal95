@@ -268,11 +268,11 @@ window.onload = function() {
      * @param {Array<string>} [blinkColors=["red","yellow","green"]] - colors to cycle through
      */
     function makeBlink(id, rate, blinkColors) {
+        rate = rate ? rate : 250;
+        blinkColors = blinkColors ? blinkColors : ["red","yellow","green"];
         let toblink = document.getElementById(id);
         let lastBlinkTime = 0;
         let lastBlinkColor = 0;
-        blinkColors = blinkColors ? blinkColors : ["red","yellow","green"];
-        rate = rate ? rate : 250;
         function blinker() {
             let time = performance.now();
             if ((time-lastBlinkTime) > rate) {
