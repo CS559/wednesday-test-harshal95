@@ -124,7 +124,7 @@ up, you can always use GIT to help you get back to an older version.</p>
         </div>
     </div>
     <div id="box5" class="examplebox">
-        <H2>Box5: Animation and RequestAnimationFrame</H2>
+        <H2>Box 5: Animation and RequestAnimationFrame</H2>
         <p>
             Thus far, we can do things in response to the user. 
             Our code runs in response to an event happening.
@@ -168,7 +168,74 @@ up, you can always use GIT to help you get back to an older version.</p>
         <p>
             <input type="range" min="0" max="100" id="box5-slider">
         </p>
-       
+    </div>
+    <div id="box6" class="examplebox">
+        <H2>Box 6: Animation Loop Programming</H2>
+        <p>
+            Here is another example. 
+            Notice how the first slider doesn't need
+            to ever create an event. When the second slider
+            is updated, it polls the first (looks at its value).
+        </p>
+        <p>
+            Change the first slider to affect how the second one moves.
+        </p>
+        <p>
+            <input type="range" min="-5" max="5" value="1" id="box6-slider1">
+            <input type="range" min="0" max="100" id="box6-slider2">
+        </p>
+        <p>
+            Or with a checkbox (buttons are mainly good at generating events):
+        </p>
+        <p>
+            speed: <input type="checkbox" id="box6-check">
+            <input type="range" min="0" max="100" id="box6-slider3">
+        </p>
+        <p>
+            Or, even this.... (which isn't that much different)
+        </p>
+        <p>
+            go: <input type="checkbox" id="box6-check2">
+            <input type="range" min="0" max="100" id="box6-slider4">
+        </p>
+        <p>
+            The thing to notice here is that the "loop" runs even if
+            the slider isn't moving! In this case, it's pretty wasteful.
+            But it gets at the main idea of animation loop programming:
+            the loop keeps going, and each iteration it checks to see if 
+            something happened. In contrast, event-loop programming only
+            does things when something happens.
+        </p>
+    </div>
+    <div id="box7" class="examplebox">
+        <h2>Box 7: one more silly example</h2>
+        <p>
+            Of course, in an animation loop we don't have to limit ourselves to moving sliders.
+            We can change anything (in the future, we'll change graphics).
+        </p>
+        <p>
+            Also, we will often put all of our "changes" into a single function, so there
+            is only one <code>requestAnimationFrame</code>. That function might call other functions.
+        </p>
+        <p>
+            And, since we don't know how fast the loop will go (since the browser might do some
+            work between calls, or the stuff we do might take some time), we need to look at the
+            actual "clock time" to make sure that things go at the right speed.
+        </p>
+        <p>
+            Here's a silly example where I make something blink (the hard way). The trick is I want
+            it to change color every 250ms (not faster). Look at the code.
+            <span id="box7-span1">Some text to blink</span>
+        </p>
+        <p>
+            OK, that was horrible. Let me try to see if
+            <span id="box7-span2">this is any better?</span>
+            Or, maybe <span id="box7-span3">even this one</span>
+        </p>
+        <p>
+            Those are all really annoying looking - I'll let you try something better
+            on the next page...
+        </p>
     </div>
     <div id="sumbox" class="examplebox">
         <H2>Summary:</H2>
@@ -185,6 +252,9 @@ up, you can always use GIT to help you get back to an older version.</p>
             <li>
                 How we make use of the values of input elements (sliders, buttons)
                 in animation loop programs.
+            </li>
+            <li>
+                How we look at the "clock time" to set the rate at which things change.
             </li>
         </UL>
         <p>

@@ -136,6 +136,8 @@ window.onload = function() {
      * Request animation frame examples
      * 
      * Notice that I use the "performance.now" function to get the timing information
+     * https://developer.mozilla.org/en-US/docs/Web/API/Performance/now
+     * 
      */
     // use request animation frame to do something 16ms
     // in the future - this kindof one off usage is a little
@@ -145,7 +147,9 @@ window.onload = function() {
     let timestamp = performance.now();
     window.requestAnimationFrame(function() {
         let span = document.getElementById("box5-rs1");
-        span.innerText = "Hello from "+(performance.now()-timestamp)+"ms in the future";
+        // toFixed converts a floating point number to something
+        // with a fixed number of decimal places
+        span.innerText = "Hello from "+(performance.now()-timestamp).toFixed(1)+"ms in the future";
     });
 
     let rs2 = document.getElementById("box5-rs2");
@@ -161,7 +165,7 @@ window.onload = function() {
             let now = performance.now();
             // remember that we can see the variable ts1 from the outer
             // function (thanks to closure!)
-            rs2.innerText += " Hello from Second "+(now-ts1)+" ms after First.";
+            rs2.innerText += " Hello from Second "+(now-ts1).toFixed(1)+" ms after First.";
         });
     });
 
@@ -184,5 +188,103 @@ window.onload = function() {
     // to start the loop
     advanceSLR1();
 
+    /**
+     * Box 6 - examples of animation loop programming
+     */
+    // this example is really similar to the Box 5 example - notice how
+    // both sliders can work, even though neither generates
+    // any events. everything happens by "polling."
+    /** @type{HTMLInputElement} */ let slr2 = (/** @type{HTMLInputElement} */ document.getElementById("box6-slider1"));
+    /** @type{HTMLInputElement} */ let slr2b = (/** @type{HTMLInputElement} */ document.getElementById("box6-slider2"));
+    function advanceSLR2() {
+        // add speed, roll over to zero if we hit the max
+        // note that the value of the slider is a string,
+        // so we have to convert it to a number
+        // The more obvious 1+"1" = "11" - thanks to JavaScripts
+        // aggressive coercion rules
+        let speed = Number(slr2.value);
+        let newValue = (Number(slr2b.value)+speed) % 100;
+        if (newValue<0) newValue=100;
+        slr2b.value = newValue.toString();
+        // ask for this to be called again 16ms in the future
+        window.requestAnimationFrame(advanceSLR2);
+    }
+    // note that just defined the function, now we need to call it
+    // to start the loop
+    advanceSLR2();
 
+    /** @type{HTMLInputElement} */ let slr3 = (/** @type{HTMLInputElement} */ document.getElementById("box6-slider3"));
+    /** @type{HTMLInputElement} */ let speedbut = (/** @type{HTMLInputElement} */ document.getElementById("box6-check"));
+    function advanceSLR3() {
+        // add speed, roll over to zero if we hit the max
+        // note that the value of the slider is a string,
+        // so we have to convert it to a number
+        // The more obvious 1+"1" = "11" - thanks to JavaScripts
+        // aggressive coercion rules
+        let speed = speedbut.checked ? 3 : 1;
+        let newValue = (Number(slr3.value)+speed) % 100;
+        if (newValue<0) newValue=100;
+        slr3.value = newValue.toString();
+        // ask for this to be called again 16ms in the future
+        window.requestAnimationFrame(advanceSLR3);
+    }
+    // note that just defined the function, now we need to call it
+    // to start the loop
+    advanceSLR3();
+
+    /** @type{HTMLInputElement} */ let slr4 = (/** @type{HTMLInputElement} */ document.getElementById("box6-slider4"));
+    /** @type{HTMLInputElement} */ let gobut = (/** @type{HTMLInputElement} */ document.getElementById("box6-check2"));
+    function advanceSLR4() {
+        // add speed, roll over to zero if we hit the max
+        // note that the value of the slider is a string,
+        // so we have to convert it to a number
+        // The more obvious 1+"1" = "11" - thanks to JavaScripts
+        // aggressive coercion rules
+        let speed = gobut.checked ? 2 : 0;
+        let newValue = (Number(slr4.value)+speed) % 100;
+        if (newValue<0) newValue=100;
+        slr4.value = newValue.toString();
+        // ask for this to be called again 16ms in the future
+        window.requestAnimationFrame(advanceSLR4);
+    }
+    // note that just defined the function, now we need to call it
+    // to start the loop
+    advanceSLR4();
+
+    /**
+     * Box 7 - blinking the hard way
+     * 
+     * I'm going to do the work in a function, so I can use it for multiple things
+     */
+
+    /**
+     * A function that makes an HTML element blink
+     * 
+     * This creates a function that does the blinking, and makes an animation loop
+     * with requestAnimationFrame
+     * 
+     * @param {string} id - which element to find
+     * @param {number} [rate=250] - blink rate in milliseconds
+     * @param {Array<string>} [blinkColors=["red","yellow","green"]] - colors to cycle through
+     */
+    function makeBlink(id, rate, blinkColors) {
+        let toblink = document.getElementById(id);
+        let lastBlinkTime = 0;
+        let lastBlinkColor = 0;
+        blinkColors = blinkColors ? blinkColors : ["red","yellow","green"];
+        rate = rate ? rate : 250;
+        function blinker() {
+            let time = performance.now();
+            if ((time-lastBlinkTime) > rate) {
+                lastBlinkTime = time;
+                toblink.style.backgroundColor = blinkColors[lastBlinkColor % blinkColors.length];
+                lastBlinkColor++;
+            }
+            window.requestAnimationFrame(blinker);
+        }
+        blinker();    
+    }
+    makeBlink("box7-span1");
+    makeBlink("box7-span2",500);
+    makeBlink("box7-span3",350,["lightpink","lightyellow","lightgreen"]);
 };

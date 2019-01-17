@@ -3,7 +3,8 @@
 /** overall, use sans-serif fonts since they look nicer */
 body {
     font-family: Calibri, Helvetica, sans-serif;
-    width:800px;
+    min-width:400px;
+    max-width:760px;
 }
 
 /** put each example into a box */
