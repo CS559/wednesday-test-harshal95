@@ -203,6 +203,7 @@ window.onload = function() {
         // The more obvious 1+"1" = "11" - thanks to JavaScripts
         // aggressive coercion rules
         let speed = Number(slr2.value);
+        console.log(`current speed is ${speed}`);
         let newValue = (Number(slr2b.value)+speed) % 100;
         if (newValue<0) newValue=100;
         slr2b.value = newValue.toString();
@@ -223,7 +224,7 @@ window.onload = function() {
         // aggressive coercion rules
         let speed = speedbut.checked ? 3 : 1;
         let newValue = (Number(slr3.value)+speed) % 100;
-        if (newValue<0) newValue=100;
+        //if (newValue<0) newValue=100;
         slr3.value = newValue.toString();
         // ask for this to be called again 16ms in the future
         window.requestAnimationFrame(advanceSLR3);

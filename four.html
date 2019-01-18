@@ -50,6 +50,11 @@ a partially right program for each exercise.</p>
             slider1 or slider2 are moved. Making it such that slider1 and/or slider2 move
             when slider3 moves is a little trickier (and optional).
         </p>
+        <div>
+            <input id="box01-slider1" type="range" min="0" max="100" value="50"><br />
+            <input id="box01-slider2" type="range" min="0" max="100" value="50"><br />
+            <input id="box01-slider3" type="range" min="-100" max="100" value="0"><br />
+        </div>
         <p>
             <strong>Hint:</strong> Box 4 on page three is a good starting point.
             The lower of the two sliders there has a nicer behavior for this exercise.
@@ -63,6 +68,11 @@ a partially right program for each exercise.</p>
             This is sortof like the last slider in Box 6 on page three, except that you should
             use two buttons, rather than one checkbox.
         </p>
+        <div>
+            <input type="range" min="0" max="100" id="box02-slider1">
+            <button id="box02-button1" class="simplebutton">Start</button>
+            <button id="box02-button2" class="simplebutton">Stop</button>
+        </div>
         <p>
             <strong>Hint:</strong> With buttons, the easier thing is to handle the
             <code>onclick</code> events. The event handlers will need to pass information
